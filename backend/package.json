@@ -1,0 +1,22 @@
+{
+  "name": "soilmoisture",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "ds18b20-raspi": "^0.3.6",
+    "eslint": "^7.29.0",
+    "express": "^4.17.1",
+    "mcp-3xxx": "^1.0.1",
+    "node-cron": "^3.0.0",
+    "onoff": "^6.0.3",
+    "pi-camera-connect": "^0.3.4"
+  }
+}
