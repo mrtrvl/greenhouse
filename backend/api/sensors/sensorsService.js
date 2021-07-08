@@ -1,6 +1,7 @@
 const db = require('../../db');
 const MoistureSensor = require('./MoistureSensor');
 const TempSensor = require('./TempSensor');
+const PirSensor = require('./PirSensor');
 const logMessage = require('../logging');
 const sensors = []
 ;
@@ -8,6 +9,7 @@ const sensorsService = {
     initSensors: async () => {
         await sensorsService.initMoistureSensors();
         await sensorsService.initTempeSensors();
+        await sensorsService.initPirSensors();
         return sensors;
     },
     initMoistureSensors: async () => {
@@ -23,6 +25,13 @@ const sensorsService = {
             sensors.push(new TempSensor(sensor.id, sensor.name, sensor.channel, sensor.relayId));
         });
         logMessage('Temperature sensors initiated');
+    },
+    initPirSensors: async () => {
+        const pirSensorsToInit = db.pirSensors;
+        pirSensorsToInit.forEach(sensor => {
+            sensors.push(new PirSensor(sensor.id, sensor.name, sensor.channel, sensor.relayId));
+        });
+        logMessage('Pir sensors initiated');
     },
     getById: (id) => {
         const sensorsId = parseInt(id);

@@ -8,7 +8,9 @@ class TempSensor extends Device {
         super(id, name, channel)
         this.relayId = relayId || false;
     }
-
+    getChannel = () => {
+        return this.channel;
+    }
     getRelayId = () => {
         return this.relayId;
     }

@@ -21,6 +21,14 @@ const db = {
             relayId: null
         },
     ],
+    pirSensors: [
+        {
+            id: 4,
+            name: 'Veranda liikumisandur',
+            channel: 14,
+            relayId: null
+        },
+    ],
     relays: [
         {
             id: 1,
